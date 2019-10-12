@@ -28,7 +28,7 @@ class HalfLifeRegression(nn.Module):
             sf=self.linear.weight.size(),
             sel=self.lexeme_emb.weight.size(),
             f=self.linear.weight,
-            el=self.lexeme_emb.weight,
+            el=self.lexeme_emb.weight[:,0],
         )    
     
         fx = self.linear(x)
