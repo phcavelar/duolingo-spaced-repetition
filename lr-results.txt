@@ -1,0 +1,55 @@
+python main.py --model=lr
+
+MAE: 0.109242216
+AUC: 0.47046835651631197
+WRS: RanksumsResult(statistic=624.1437415437568, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=0.5607546046816468, pvalue=0.0)
+
+MAE: 0.11906203
+AUC: 0.4607712017515909
+WRS: RanksumsResult(statistic=650.9593190888128, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=0.5554211001607927, pvalue=0.0)
+
+MAE: 0.11609941
+AUC: 0.46246479480621183
+WRS: RanksumsResult(statistic=647.8100778960566, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=0.5458471912831204, pvalue=0.0)
+
+MAE: 0.11291839
+AUC: 0.4618575424617648
+WRS: RanksumsResult(statistic=588.1296975524709, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=0.5597737030590674, pvalue=0.0)
+
+MAE: 0.11272746
+AUC: 0.4584344413711421
+WRS: RanksumsResult(statistic=525.9958415562878, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=0.5635486099202549, pvalue=0.0)
+
+
+python main.py --batch_size=4096 --model=lr
+
+MAE: 0.14291252
+AUC: 0.44991262169683965
+WRS: RanksumsResult(statistic=844.0900301664632, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=0.5513542072389819, pvalue=0.0)
+
+MAE: 0.14527033
+AUC: 0.4567896031970205
+WRS: RanksumsResult(statistic=757.9239746267792, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=0.549849739230935, pvalue=0.0)
+
+MAE: 0.15607451
+AUC: 0.4537008500547683
+WRS: RanksumsResult(statistic=703.1047899244746, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=0.5774917736947229, pvalue=0.0)
+
+MAE: 0.17441294
+AUC: 0.45982754420669725
+WRS: RanksumsResult(statistic=764.4297181319668, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=0.5947433358516618, pvalue=0.0)
+
+MAE: 0.21215552
+AUC: 0.4421762193624741
+WRS: RanksumsResult(statistic=793.7555322364747, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=0.581500729174544, pvalue=0.0)
+

@@ -1,0 +1,28 @@
+python main.py --batch_size=4096 --supress_tqdm 2>bla.err
+
+MAE: 0.36703148
+AUC: 0.528737306204145
+WRS: RanksumsResult(statistic=1005.214085540163, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.1421255704515172, pvalue=0.0)
+
+MAE: 0.442052
+AUC: 0.5221396482814622
+WRS: RanksumsResult(statistic=1070.7111462195007, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.16526512203389623, pvalue=0.0)
+
+MAE: 0.3010681
+AUC: 0.5237425024725053
+WRS: RanksumsResult(statistic=936.7225113170199, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.15966202027779244, pvalue=0.0)
+
+MAE: 0.34289
+AUC: 0.5275521882899111
+WRS: RanksumsResult(statistic=978.3145386287691, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.1465904605917394, pvalue=0.0)
+
+MAE: 0.33452654
+AUC: 0.5207654321476979
+WRS: RanksumsResult(statistic=955.8171752813931, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.15951804420194077, pvalue=0.0)
+
+python main.py --supress_tqdm 2>bla.err
