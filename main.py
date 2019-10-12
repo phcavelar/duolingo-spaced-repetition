@@ -71,14 +71,14 @@ def to_cuda(x):
 
 def main(
         model:str="hlr",
-        learning_rate = 0.001,
-        hl_loss = 0.01,
-        l2_loss = 0.1,
-        batch_size = 1024,
-        num_epochs = 10,
-        test_split = 0.1,
-        use_cuda = True,
-        supress_tqdm = False,
+        learning_rate:float = 0.001,
+        hl_loss:float = 0.01,
+        l2_loss:float = 0.1,
+        batch_size:int = 1024,
+        num_epochs:int = 10,
+        test_split:float = 0.1,
+        use_cuda:bool = True,
+        supress_tqdm:bool = False,
         ):
     torch.set_printoptions(profile="full")
     logfile = open("log.txt","w")
