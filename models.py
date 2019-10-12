@@ -32,15 +32,38 @@ class HalfLifeRegression(nn.Module):
         assertion = torch.all(torch.isfinite(prob)) and torch.all(torch.isfinite(h_error_mask))
         error_mask = p_error_mask.squeeze()
         assert assertion, """NaN value in prob or half_life!
-        x={x}
-        fx={fx}
-        e={e}
-        ex={ex}
-        l={l}
-        h={h}
-        t={t}
-        p={p}
-        """.format(x=x[error_mask],fx=x[error_mask],e=e[error_mask],ex=ex[error_mask],l=l[error_mask],h=half_life[error_mask],t=t[error_mask],p=prob[error_mask])
+        f ({sf}) ={f}
+        el({sel})={el}
+        x ({sx}) ={x}
+        fx({sfx})={fx}
+        e ({se}) ={e}
+        ex({sex})={ex}
+        l ({sl}) ={l}
+        h ({sh}) ={h}
+        t ({st}) ={t}
+        p ({sp}) ={p}
+        """.format(
+            f=self.linear.weight,
+            el=self.lexeme_emb.weight,
+            x=x[error_mask],
+            fx=x[error_mask],
+            e=e[error_mask],
+            ex=ex[error_mask],
+            l=l[error_mask],
+            h=half_life[error_mask],
+            t=t[error_mask],
+            p=prob[error_mask].size(),
+            sf=self.linear.weight.size(),
+            sel=self.lexeme_emb.weight.size(),
+            sx=x[error_mask].size(),
+            sfx=x[error_mask].size(),
+            se=e[error_mask].size(),
+            sex=ex[error_mask].size(),
+            sl=l[error_mask].size(),
+            sh=half_life[error_mask].size(),
+            st=t[error_mask].size(),
+            sp=prob[error_mask].size()
+        )
         return prob, half_life
 
 
