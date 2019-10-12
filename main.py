@@ -77,8 +77,10 @@ def main(
         batch_size = 1024,
         num_epochs = 10,
         test_split = 0.1,
-        use_cuda = True
+        use_cuda = True,
+        supress_tqdm = False,
         ):
+    torch.set_printoptions(profile="full")
     logfile = open("log.txt","w")
     use_cuda = use_cuda and torch.cuda.is_available()
     
@@ -104,10 +106,10 @@ def main(
     
     n_train, n_test = map(len,(df_train, df_test))
     
-    for e in tqdm(range(num_epochs), total=num_epochs, desc="Epoch "):
+    for e in tqdm(range(num_epochs), total=num_epochs, desc="Epoch ", disable=supress_tqdm):
         #permutation = np.arange(n_train)
         permutation = np.random.permutation(n_train)
-        for b in tqdm(range(0,n_train,batch_size), total=n_train/batch_size, desc="Batch "):
+        for b in tqdm(range(0,n_train,batch_size), total=n_train/batch_size, desc="Batch ", disable=supress_tqdm):
             opt.zero_grad()
             idx = permutation[b:b+batch_size]
             
@@ -138,7 +140,7 @@ def main(
     permutation = np.arange(n_test)
     logfile.write("TESTING")
     with torch.no_grad():
-        for i in tqdm(range(0,n_test,batch_size), total=n_test/batch_size, desc="Test "):
+        for i in tqdm(range(0,n_test,batch_size), total=n_test/batch_size, desc="Test ", disable=supress_tqdm):
             idx = permutation[i:i+batch_size]
             x, l, t, p, h = prepare_batch(df_test, idx, include_delta)
             test_hs.append(h)
