@@ -5,11 +5,10 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class HalfLifeRegression(nn.Module):
-    def __init__(self,num_features, num_lexemes, base=2., h_min=15/60/24, h_max=9*30, p_min=0.0001, p_max=0.9999, epsilon=1e-6):
+    def __init__(self,num_features, num_lexemes, base=2., h_min=15/60/24, h_max=9*30, p_min=0.0001, p_max=0.9999, epsilon=1e-6, linear_init="zeros", emb_init="zeros"):
         super(HalfLifeRegression,self).__init__()
         self.linear = nn.Linear(num_features,1)
         self.lexeme_emb = nn.Embedding(num_lexemes,1)
-        nn.init.constant_(self.lexeme_emb.weight,0.)
         self.base = nn.Parameter(torch.tensor(base),requires_grad=False)
         self.num_lexemes = num_lexemes
         
@@ -18,6 +17,20 @@ class HalfLifeRegression(nn.Module):
         self.p_min = nn.Parameter(torch.tensor(p_min),requires_grad=False)
         self.p_max = nn.Parameter(torch.tensor(p_max),requires_grad=False)
         self.eps = nn.Parameter(torch.tensor(epsilon),requires_grad=False)
+        
+        if emb_init=="default":
+            pass
+        elif emb_init=="zeros":
+            nn.init.constant_(self.lexeme_emb.weight,0.)
+        elif emb_init=="xavier":
+            nn.init.xavier_uniform(self.lexeme_emb.weight)
+            
+        if linear_init=="default":
+            pass
+        elif linear_init=="zeros":
+            nn.init.constant_(self.linear.weight,0.)
+        elif linear_init=="xavier":
+            nn.init.xavier_uniform(self.linear.weight)
     
     def forward(self, x, l, t):
         assertion = torch.all(torch.isfinite(self.linear.weight)) and torch.all(torch.isfinite(self.lexeme_emb.weight))
@@ -41,7 +54,7 @@ class HalfLifeRegression(nn.Module):
 
 
 class LogisticRegression(nn.Module):
-    def __init__(self,num_features, num_lexemes, base=None, h_min=15/60/24, h_max=9*30, p_min=0.0001, p_max=0.9999, epsilon=1e-6):
+    def __init__(self,num_features, num_lexemes, base=None, h_min=15/60/24, h_max=9*30, p_min=0.0001, p_max=0.9999, epsilon=1e-6, linear_init="zeros", emb_init="zeros"):
         super(LogisticRegression,self).__init__()
         self.linear = nn.Linear(num_features,1)
         self.lexeme_emb = nn.Embedding(num_lexemes,1)
@@ -54,6 +67,20 @@ class LogisticRegression(nn.Module):
         self.p_min = nn.Parameter(torch.tensor(p_min),requires_grad=False)
         self.p_max = nn.Parameter(torch.tensor(p_max),requires_grad=False)
         self.eps = nn.Parameter(torch.tensor(epsilon),requires_grad=False)
+        
+        if emb_init=="default":
+            pass
+        elif emb_init=="zeros":
+            nn.init.constant_(self.lexeme_emb.weight,0.)
+        elif emb_init=="xavier":
+            nn.init.xavier_uniform(self.lexeme_emb.weight)
+            
+        if linear_init=="default":
+            pass
+        elif linear_init=="zeros":
+            nn.init.constant_(self.linear.weight,0.)
+        elif linear_init=="xavier":
+            nn.init.xavier_uniform(self.linear.weight)
     
     def forward(self, x, l, t):
         logit = self.linear(x)

@@ -79,6 +79,8 @@ def main(
         test_split:float = 0.1,
         use_cuda:bool = True,
         supress_tqdm:bool = False,
+        linear_init="zeros",
+        emb_init="zeros",
         ):
     torch.set_printoptions(profile="full")
     logfile = open("log.txt","w")
@@ -91,7 +93,7 @@ def main(
     num_features = 4 if include_delta else 3
     num_lexemes = 1 + df["lexeme_id"].max()
     
-    reg = model_dict[model](num_features=num_features, num_lexemes=num_lexemes, h_min=H_MIN, h_max=H_MAX, p_min=P_MIN, p_max=P_MAX)
+    reg = model_dict[model](num_features=num_features, num_lexemes=num_lexemes, h_min=H_MIN, h_max=H_MAX, p_min=P_MIN, p_max=P_MAX, linear_init=linear_init, emb_init=emb_init)
     
     if use_cuda:
         reg = reg.cuda()

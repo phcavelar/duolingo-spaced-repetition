@@ -1,4 +1,4 @@
-python main.py --model=lr
+python main.py --model=lr --linear_init=zeros
 
 MAE: 0.109242216
 AUC: 0.47046835651631197
@@ -26,7 +26,7 @@ WRS: RanksumsResult(statistic=525.9958415562878, pvalue=0.0)
 Cor(h): SpearmanrResult(correlation=0.5635486099202549, pvalue=0.0)
 
 
-python main.py --batch_size=4096 --model=lr
+python main.py --batch_size=4096 --model=lr --linear_init=zeros
 
 MAE: 0.14291252
 AUC: 0.44991262169683965

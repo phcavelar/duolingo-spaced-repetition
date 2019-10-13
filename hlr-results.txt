@@ -1,4 +1,4 @@
-python main.py --batch_size=4096 --supress_tqdm 2>bla.err
+python main.py --batch_size=4096 --supress_tqdm --linear_init=zeros
 
 MAE: 0.36703148
 AUC: 0.528737306204145
@@ -25,7 +25,7 @@ AUC: 0.5207654321476979
 WRS: RanksumsResult(statistic=955.8171752813931, pvalue=0.0)
 Cor(h): SpearmanrResult(correlation=-0.15951804420194077, pvalue=0.0)
 
-python main.py --batch_size=1024 --model=hlr --num_epochs=1 --l2_loss=0
+python main.py --batch_size=1024 --model=hlr --num_epochs=1 --l2_loss=0 --linear_init=zeros
 
 MAE: 0.33648694
 AUC: 0.5241342290068363
@@ -52,4 +52,30 @@ AUC: 0.523622899397306
 WRS: RanksumsResult(statistic=938.8511590269551, pvalue=0.0)
 Cor(h): SpearmanrResult(correlation=-0.15361021669482733, pvalue=0.0)
 
+python main.py --batch_size=1024 --model=hlr --num_epochs=1 --linear_init=zeros
+
+MAE: 0.5238543
+AUC: 0.5358379937734858
+WRS: RanksumsResult(statistic=1108.267048481793, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=0.1483509326196276, pvalue=0.0)
+
+MAE: 0.3428046
+AUC: 0.5273394162176424
+WRS: RanksumsResult(statistic=991.3115866852899, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.1504339390001527, pvalue=0.0)
+
+MAE: 0.3111444
+AUC: 0.530866241234866
+WRS: RanksumsResult(statistic=943.4523118221512, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.12689692215154433, pvalue=0.0)
+
+MAE: 0.32647228
+AUC: 0.5285208266465028
+WRS: RanksumsResult(statistic=981.0908780419286, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.14566286504562168, pvalue=0.0)
+
+MAE: 0.36618564
+AUC: 0.5231561620966046
+WRS: RanksumsResult(statistic=1009.772365715904, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.15942850853831628, pvalue=0.0)
 
