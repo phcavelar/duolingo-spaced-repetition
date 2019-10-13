@@ -25,4 +25,31 @@ AUC: 0.5207654321476979
 WRS: RanksumsResult(statistic=955.8171752813931, pvalue=0.0)
 Cor(h): SpearmanrResult(correlation=-0.15951804420194077, pvalue=0.0)
 
-python main.py --supress_tqdm 2>bla.err
+python main.py --batch_size=1024 --model=hlr --num_epochs=1 --l2_loss=0
+
+MAE: 0.33648694
+AUC: 0.5241342290068363
+WRS: RanksumsResult(statistic=952.0589221958538, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.152014162032109, pvalue=0.0)
+
+MAE: 0.28934586
+AUC: 0.525215683191967
+WRS: RanksumsResult(statistic=898.5115954189349, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.1504154102594496, pvalue=0.0)
+
+MAE: 0.34624952
+AUC: 0.5310951982593983
+WRS: RanksumsResult(statistic=1004.1429858629488, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.12974682971260393, pvalue=0.0)
+
+MAE: 0.39234722
+AUC: 0.5339113788725159
+WRS: RanksumsResult(statistic=1042.1846046510425, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.1065612166310947, pvalue=0.0)
+
+MAE: 0.32253522
+AUC: 0.523622899397306
+WRS: RanksumsResult(statistic=938.8511590269551, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.15361021669482733, pvalue=0.0)
+
+
