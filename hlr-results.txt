@@ -1,4 +1,4 @@
-python main.py --batch_size=4096 --supress_tqdm --linear_init=zeros
+python main.py --batch_size=4096 --supress_tqdm --linear_init=default
 
 MAE: 0.36703148
 AUC: 0.528737306204145
@@ -25,7 +25,7 @@ AUC: 0.5207654321476979
 WRS: RanksumsResult(statistic=955.8171752813931, pvalue=0.0)
 Cor(h): SpearmanrResult(correlation=-0.15951804420194077, pvalue=0.0)
 
-python main.py --batch_size=1024 --model=hlr --num_epochs=1 --l2_loss=0 --linear_init=zeros
+python main.py --batch_size=1024 --model=hlr --num_epochs=1 --l2_loss=0 --linear_init=default
 
 MAE: 0.33648694
 AUC: 0.5241342290068363
@@ -52,7 +52,7 @@ AUC: 0.523622899397306
 WRS: RanksumsResult(statistic=938.8511590269551, pvalue=0.0)
 Cor(h): SpearmanrResult(correlation=-0.15361021669482733, pvalue=0.0)
 
-python main.py --batch_size=1024 --model=hlr --num_epochs=1 --linear_init=zeros
+python main.py --batch_size=1024 --model=hlr --num_epochs=1 --linear_init=default
 
 MAE: 0.5238543
 AUC: 0.5358379937734858
@@ -78,4 +78,31 @@ MAE: 0.36618564
 AUC: 0.5231561620966046
 WRS: RanksumsResult(statistic=1009.772365715904, pvalue=0.0)
 Cor(h): SpearmanrResult(correlation=-0.15942850853831628, pvalue=0.0)
+
+python main.py --batch_size=1024 --num_epochs=1
+
+MAE: 0.3649545
+AUC: 0.5276412650698203
+WRS: RanksumsResult(statistic=1018.7614369106649, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.15287333626921326, pvalue=0.0)
+
+MAE: 0.37724864
+AUC: 0.5278084086609358
+WRS: RanksumsResult(statistic=1028.0344838239128, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.15261746096934134, pvalue=0.0)
+
+MAE: 0.34472233
+AUC: 0.5271665042196093
+WRS: RanksumsResult(statistic=1000.8321256754069, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.15365224767447483, pvalue=0.0)
+
+MAE: 0.39118317
+AUC: 0.5281191543080533
+WRS: RanksumsResult(statistic=1038.092910318327, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.15202772931224426, pvalue=0.0)
+
+MAE: 0.35097152
+AUC: 0.5273639512235306
+WRS: RanksumsResult(statistic=1006.6937533986354, pvalue=0.0)
+Cor(h): SpearmanrResult(correlation=-0.15324131203620478, pvalue=0.0)
 
